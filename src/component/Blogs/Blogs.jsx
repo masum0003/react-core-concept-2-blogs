@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Blog from '../Blog/Blog';
-const Blogs = () => {
+const Blogs = ({handleBookMark ,handleReadTime}) => {
 
     const[blogs, setBlogs] = useState([]);
 
@@ -19,7 +19,7 @@ const Blogs = () => {
             <div className="all-blogs grid grid-cols-2 p-3 gap-5">
 
             {
-                blogs.map((blog)=> <Blog blog={blog}></Blog>)
+                blogs.map((blog)=> <Blog key={blog.id} handleBookMark={handleBookMark} handleReadTime={handleReadTime} blog={blog}></Blog>)
             }
             </div>
         </div> 
